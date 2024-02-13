@@ -1,0 +1,96 @@
+html,
+body {
+  background: none transparent;
+}
+
+.ai-prompt-placeholder-form,
+.placeholder-form {
+  background-color: var(--magical-background-color);
+  padding: 24px;
+  margin-block-end: 0;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+}
+
+form h1 {
+  color: var(--magical-gray-80);
+  margin: 4px 0 4px 0;
+  font-weight: bold;
+  font-size: var(--magical-font-size-xlarge);
+}
+
+span[data-magical-placeholder-destination-id],
+span[data-magical-placeholder-src-id] {
+  padding: 1px 8px;
+  background-color: #D7FFCF;
+  outline: 1px solid #008201;
+  border-radius: 4px;
+  max-width: 100%;
+  line-height: initial;
+}
+
+/** Set initial display to inline-block to make sure placeholder could display correctly */
+[data-placeholder]:empty {
+  display: inline-block;
+}
+
+span.multiline[data-magical-placeholder-destination-id],
+span.multiline[data-magical-placeholder-src-id] {
+  display: inline-block;
+  margin: 3px 0;
+  /* Make it obvious that the field supports multiple lines. */
+  min-height: 2em;
+  width: 100%;
+}
+
+p {
+  font-size: var(--magical-font-size-small);
+  line-height: 24px;
+  padding-inline: 1px;
+}
+
+.ai-prompt-placeholder-dialog__menu,
+.placeholder-dialog__menu {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+}
+
+[data-vertical-scrolling-container] {
+  min-height: 1.5em;
+}
+
+.ai-prompt-placeholder-form [data-vertical-scrolling-container] {
+  /* Allows for a rectangular view port when placeholder has AI prompts */
+  height: 266px;
+}
+
+button.placeholder-dialog-cancel-button {
+  margin-left: 8px;
+}
+
+span:not([contenteditable="true"])[data-magical-ai-prompt-loading="true"]::before {
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--magical-gray-50);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  content: "";
+  vertical-align: middle;
+  margin: 0 3px 3px 0;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}

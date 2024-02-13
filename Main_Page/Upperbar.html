@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover Tab Example</title>
+    <style>
+        /* CSS for the hover tab */
+        .hover-tab {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px 5px 0 0;
+            cursor: pointer;
+        }
+
+        /* CSS for the dropdown content */
+        .dropdown-content {
+            display: none;
+            position: fixed;
+            top: 35px; /* Adjust this value according to your design */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 0 0 5px 5px;
+        }
+
+        /* Show dropdown content on hover */
+        .hover-tab:hover + .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hover tab -->
+<div class="hover-tab">Hover Here</div>
+
+<!-- Dropdown content -->
+<div class="dropdown-content">
+    <p>This is the dropdown content. You can add your content here.</p>
+</div>
+
+</body>
+</html>
